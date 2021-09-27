@@ -21,7 +21,7 @@
            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar"><!--data-* more to come-->
                 <span class="navbar-toggler-icon"></span>
            </button>
-            <a class="navbar-brand mr-auto" href="./index1.html">Ristorante Con Fusion</a><!--href allows for brand logo click to lead to home page-->
+            <a class="navbar-brand mr-auto" href="./index1.html"><img src="img/logo.png" height="30" width="41"></a><!--href allows for brand logo click to lead to home page-->
             <div class="collapse navbar-collapse" id="Navbar"><!--DIV class now applies to contents of the div-->
                 <ul class="navbar-nav mr-auto"><!--mr = margin right-->
                     <li class="nav-item"><a class="nav-link" href="./index1.html"><span class="fa fa-home fa-lg"></span> Home</a></li>
@@ -35,13 +35,14 @@
     <header class="jumbotron">
         <div class="container">
             <div class="row row-header">
-                <div class="col-12 col-sm-7"> <!--changed from 6 to 7 on sm for
+                <div class="col-12 col-sm-6"> <!--changed from 6 to 7 on sm for
                 paragraph block to end on a full sentence-->
                     <h1>Ristorante con Fusion</h1>
                     <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
                 </div>
-                <div class="col-12 col-sm">
-               
+                <div class="col-12 col-sm align-self-center"><!-- HERE on xs, content will be stacked on one another. For others, it will take remaning space 
+                    since the first div takes up 6 cols-->
+                    <img src="img/logo.png" class="img-fluid"> <!--ing will be responsive-->
                 </div>
             </div>
         </div>
