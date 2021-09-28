@@ -14,7 +14,34 @@
      <link rel="stylesheet" href="css/styles.css">
     <title>Ristorante Con Fusion</title>
 </head>
+<script>
+    function submitBtn() {
+        document.getElementById("submit").innerHTML = "We've recieved your reservation!";
+    }
+    
+</script>
+<style> /*CSS to overrule placeholder block on date and time attribute */
+    input[type="date"]:before {
+    content: attr(placeholder) !important;
+    color: #aaa;
+    margin-right: 0.5em;
+  }
+  input[type="date"]:focus:before,
+  input[type="date"]:valid:before {
+    content: "";
+  }
 
+  input[type="time"]:before {
+    content: attr(placeholder) !important;
+    color: #aaa;
+    margin-right: 0.5em;
+  }
+  input[type="time"]:focus:before,
+  input[type="time"]:valid:before {
+    content: "";
+  }
+ 
+</style>
 <body>
     <nav class="navbar navbar-dark navbar-expand-sm fixed-top"> <!-- navigation bar-->
         <div class="container"><!-- use container to define the width of the content in the page-->
@@ -24,7 +51,7 @@
             <a class="navbar-brand mr-auto" href="#"><img src="img/logo.png" height="30" width="41"></a><!--href allows for brand logo click to lead to home page-->
             <div class="collapse navbar-collapse" id="Navbar"><!--DIV class now applies to contents of the div-->
                 <ul class="navbar-nav mr-auto"><!--mr = margin right-->
-                    <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-home fa-lg"></span> Home</a></li> <!-- note the active attribute-->
+                    <li class="nav-item active"><a class="nav-link" href="./index1.html"><span class="fa fa-home fa-lg"></span> Home</a></li> <!-- note the active attribute-->
                     <li class="nav-item"><a class="nav-link" href="./aboutus.html"><span class="fa fa-info fa-lg"></span> About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a></li>
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
@@ -40,15 +67,17 @@
                     <p>We take inspiration from the World's best cuisines, and create a unique fusion experience. Our lipsmacking creations will tickle your culinary senses!</p>
                 </div>
                 <div class="col-12 col-sm align-self-center"><!-- HERE on xs, content will be stacked on one another. For others, it will take remaning space 
-                since the first div takes up 6 cols-->
-                <img src="img/logo.png" class="img-fluid mb-3"> <!--img will be responsive, gave bottom margin-->
+                    since the first div takes up 6 cols-->
+                    <img src="img/logo.png" class="img-fluid mb-3"> <!--img will be responsive, gave bottom margin-->
                 </div>
                 <div class="col-12 col-sm row-body align-self-center">
-                    <button type="button" class="btn btn-warning">Reserve Table</button><!--LINK TO CARD/FORM-->
-                </div>
+                    <div class="col-sm text-center">
+                        <a class="btn-sm btn-block btn-warning" href="#reservation">Reserve a table</a>
+                    </div>
                 </div>
             </div>
         </div>
+        
     </header>
 <!--content section-->
     <div class = "container">
@@ -78,10 +107,7 @@
                 <h3>This Month's Promotions</h3>
             </div>
             <div class="col col-sm col-md">
-                <h2>Weekend Grand Buffet <span class="badge badge-danger">NEW</span></h2>
-                
-               <!--mr-3 img-thumbnail float-left align-self-center-->
-              
+                <h2>Weekend Grand Buffet <span class="badge badge-danger">NEW</span></h2>            
                 <p class="d-none d-sm-block">Featuring mouthwatering combinations with a choice of five different salads, six enticing appetizers, six main entrees and five choicest desserts. Free flowing bubbly and soft drinks. All for just $19.99 per person </p>
             </div>
                 <div class="media">
@@ -109,7 +135,60 @@
             </div>
         </div>
     </div>
+    
+    <div class="col-xs col-sm-8 mx-auto"><!--mx-auto to center card-->
+        <div class="card mb-5"> <!--CARD, added bottom margin-->
+            <h3 class="card-header bg-warning text-white">Reserve a Table</h3>
+                <div class="card-body">
+                    
+                        
+                        <div class="form-row">
+                            <div class="form-group col-12 col-md-2">
+                                <label for="1">Number of Guests</label>
+                            </div>
+                            <div class="from-group" id="reservation">                                                 
+                                <input type="radio" name="count" id="1">
+                                <label for="1">1</label>
+                                <input type="radio" name="count" id="2">
+                                <label for="2">2</label>
+                                <input type="radio" name="count" id="3">
+                                <label for="3">3</label>
+                                <input type="radio" name="count" id="4">
+                                <label for="4">4</label>
+                                <input type="radio" name="count" id="5">
+                                <label for="5">5</label>
+                                <input type="radio" name="count" id="6">
+                                <label for="6">6</label>
+                                    
+                            </div>                     
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-2">
+                                <label for="date" >Date and Time</label>
+                            </div>
+                            <div class="form-group col-12 col-md-4">
+                                <input type="date" class="form-control" id="date" name="res"
+                                placeholder="Date">
+                            </div>
+                            <div class="form-group col-12 col-md-4">
+                                <input type="time" class="form-control" id="time" name="res"
+                                 placeholder="Time">
+                            </div>
+                        </div>
 
+                        <div class="form-row">
+                            <div class="form-group">
+                                <button onclick="submitBtn()" type="button" class="btn btn-primary" type="submit">Reserve</button>
+                                <p id="submit"></p>
+                            </div>
+                        </div>
+                       
+                </div>
+                    
+        </div>
+    </div>
+
+    </body>
     <footer class="footer">
         <div class="container">
             <div class="row">             
