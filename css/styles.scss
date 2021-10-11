@@ -55,8 +55,14 @@ body{
     border-bottom: 1px solid $lt-gray;
     padding: 10px;
 }
-
-
+//modals
+.modal-header {
+    background-color: $background-dark;
+}
+.modal-body, .close {
+    background-color: $background-pale;
+    color: floralwhite;
+}
 //carousel class
 .carousel {
     background:$background-dark;

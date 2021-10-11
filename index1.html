@@ -15,10 +15,12 @@
     <title>Ristorante Con Fusion</title>
 </head>
 <script>
-    function submitBtn() {
+function submitBtn() {
         document.getElementById("submit").innerHTML = "We've recieved your reservation!";
     }
-   
+    
+
+
 </script>
 <style> /*CSS to overrule placeholder block on date and time attribute */
     input[type="date"]:before {
@@ -76,11 +78,11 @@
                     <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span> Menu</a></li>
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                  </ul>
-                 <!--LOGIN MODAL-->
+                 <!--LOGIN MODAL BUTTON-->
                  <span class="navbar-text">
-                     <a data-toggle="modal" data-target="#loginModal">
+                     <button type="button" class="btn btn-default btn-sm" id="loginBtn" style="color: white;">
                          <span class="fa fa-sign-in"></span> Login
-                     </a>
+                     </button>
                  </span>
             </div> 
         </div>
@@ -251,12 +253,12 @@
                 </div>
 <!--reservation button--> <div class="col-12 col-sm row-body align-self-center">
                              <div class="col-sm text-center">
-                                <a class="btn-sm btn-block btn-warning" data-toggle="modal" data-target="#resModal" >
+                                <button id="resBtn" class="btn-sm btn-block btn-warning" >
                                 <span class="fa fa-sign-in">
 
                                 </span>
                                 Reserve a Table
-                                </a>
+                            </button>
                             </div>
                 
             </div>
@@ -453,6 +455,16 @@
             
         });
     });
+$(document).ready(function(){
+  $("#loginBtn").click(function(){
+    $("#loginModal").modal();
+  });
+});
+$(document).ready(function(){
+  $("#resBtn").click(function(){
+    $("#resModal").modal();
+  });
+});
 </script>
 
 </html>
